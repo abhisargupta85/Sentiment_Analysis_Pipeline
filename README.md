@@ -1,4 +1,5 @@
 # Sentiment_Analysis_Project
+Modular, full-stack data science pipeline for IMDB review sentiment analysis.
 
 # Modular Sentiment Analysis Pipeline: IMDB Movie Reviews 
 
