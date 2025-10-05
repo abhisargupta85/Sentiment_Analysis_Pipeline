@@ -1,0 +1,13 @@
+# Python Dependencies (Mandatory for the Python Scripts)
+pandas
+# NLTK is required for the original VADER sentiment analysis model
+# which is listed as the intended approach in the README.
+nltk 
+
+# R Dependencies (Informational/Cross-Environment Use)
+# These are the R packages used in 'reporting.R'.
+# They are listed here to provide a complete dependency map
+# for anyone running the pipeline in a unified environment (e.g., using rpy2 or renv).
+# R_Package:readr
+# R_Package:ggplot2
+# R_Package:dplyr
