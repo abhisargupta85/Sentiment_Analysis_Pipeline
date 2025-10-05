@@ -1,9 +1,7 @@
-# ----------------------------------------------------
-# 4_reporting.R - Statistical Analysis and Visualization
-# ----------------------------------------------------
-
 # 1. Install necessary packages (only run this once if needed)
-# install.packages(c("tidyverse", "readr"))
+# install.packages("readr")
+# install.packages("ggplot2")
+# install.packages("dplyr")
 
 # 2. Load the libraries
 library(readr)
@@ -28,7 +26,7 @@ sentiment_summary <- sentiment_data %>%
 
 print(sentiment_summary)
 
-# 5. Create a professional visualization (Distribution Plot)
+# 5. Create a visualization
 sentiment_plot <- ggplot(sentiment_data, aes(x = sentiment, fill = sentiment)) +
   geom_bar(width = 0.7) +
   labs(
@@ -48,8 +46,9 @@ sentiment_plot <- ggplot(sentiment_data, aes(x = sentiment, fill = sentiment)) +
 # Display the plot in the R environment
 print(sentiment_plot)
 
-# 6. Save the plot
+# 6. Finally save the plot
 ggsave("sentiment_distribution_report.png", plot = sentiment_plot, width = 9, height = 6)
 
 cat("\n--- R Reporting Finished ---\n")
+
 cat("Statistical summary printed. Visualization saved as 'sentiment_distribution_report.png'.\n")
