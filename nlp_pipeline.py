@@ -3,16 +3,14 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
 import re
 
-# Download resources (uncomment and run once in the environment
-import nltk
+# Download resources (uncomment and run once in the environment)
+# import nltk
 
 # Download only if not already present
-nltk.download('vader_lexicon')
-nltk.download('punkt')
+# nltk.download('vader_lexicon')
+# nltk.download('punkt')
 
-
-
-# Initialize the VADER analyzer outside the function for efficiency
+# Initializeing the VADER analyzer
 sia = SentimentIntensityAnalyzer()
 
 def preprocess_and_score(df, text_column='review_text'):
@@ -31,9 +29,7 @@ def preprocess_and_score(df, text_column='review_text'):
         if not isinstance(text, str):
             return {'compound': 0.0, 'sentiment': 'Neutral'}
 
-        # Step 1: Basic Cleaning (Remove noise and lowercase)
-        # VADER works well without heavy stop word/stemming,
-        # but basic cleaning is necessary.
+        # Step 1: Basic Cleaning
         cleaned_text = re.sub(r'[^\w\s]', '', text).lower()
 
         # Step 2: Get VADER scores
@@ -41,7 +37,6 @@ def preprocess_and_score(df, text_column='review_text'):
         compound_score = scores['compound']
 
         # Step 3: Classify Sentiment
-        # Standard classification thresholds for VADER
         if compound_score >= 0.05:
             sentiment = 'Positive'
         elif compound_score <= -0.05:
@@ -51,7 +46,7 @@ def preprocess_and_score(df, text_column='review_text'):
 
         return {'compound': compound_score, 'sentiment': sentiment}
 
-    # Apply the function and expand results into new columns
+    # Apply the function and expand results to new columns
     results = df[text_column].apply(analyze_sentiment).apply(pd.Series)
 
     # Combine original data with results
@@ -68,4 +63,5 @@ if __name__ == '__main__':
     })
     scored_data = preprocess_and_score(test_data)
     print("\nSample Scored Data:")
+
     print(scored_data)
