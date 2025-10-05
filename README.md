@@ -13,10 +13,10 @@ The workflow is orchestrated by `3_main_execution.py` and follows a clear contra
 
 | File | Role | Technologies | I/O Contract |
 | :--- | :--- | :--- | :--- |
-| **`1_data_setup.py`** | Data Ingestion & Filtering | Python, Pandas | Loads raw CSV, returns DataFrame (`review_id`, `review_text`) |
-| **`2_nlp_pipeline.py`** | Core Model/Scoring Layer | Python, RegEx, Lexicon | Accepts DataFrame, returns DataFrame (`...`, `compound`, `sentiment`) |
-| **`3_main_execution.py`** | Orchestrator & Exporter | Python, datetime | Runs 1 & 2, exports final results to a single `.csv` file. |
-| **`4_reporting.R`** | Visualization & Reporting | R, Tidyverse (ggplot2, dplyr) | Loads `.csv` file, produces statistical summary and PNG plot. |
+| **`data_setup.py`** | Data Ingestion & Filtering | Python, Pandas | Loads raw CSV, returns DataFrame (`review_id`, `review_text`) |
+| **`nlp_pipeline.py`** | Core Model/Scoring Layer | Python, RegEx, Lexicon | Accepts DataFrame, returns DataFrame (`...`, `compound`, `sentiment`) |
+| **`main_execution.py`** | Orchestrator & Exporter | Python, datetime | Runs 1 & 2, exports final results to a single `.csv` file. |
+| **`reporting.R`** | Visualization & Reporting | R, Tidyverse (ggplot2, dplyr) | Loads `.csv` file, produces statistical summary and PNG plot. |
 
 ## Execution Steps
 
