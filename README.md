@@ -1,5 +1,5 @@
 # Sentiment_Analysis_Project
-Modular, full-stack data science pipeline for IMDB review sentiment analysis.
+Modular, full-stack data pipeline for IMDB review sentiment analysis.
 
 # Modular Sentiment Analysis Pipeline: IMDB Movie Reviews 
 
@@ -9,7 +9,7 @@ This project demonstrates a professional, modular data science pipeline built fo
 The analysis is performed on a sampled subset of the large IMDB Movie Reviews dataset.
 
 ## Project Architecture (Separation of Concerns) 
-The workflow is orchestrated by `3_main_execution.py` and follows a clear contract between layers:
+The workflow is orchestrated by `main_execution.py` and follows a clear contract between layers:
 
 | File | Role | Technologies | I/O Contract |
 | :--- | :--- | :--- | :--- |
@@ -24,11 +24,11 @@ The workflow is orchestrated by `3_main_execution.py` and follows a clear contra
 2.  **Ensure Data is Present:** Confirm `IMDB Dataset.csv` is in the root directory.
 3.  **Run Python Pipeline:** Execute the main script to process data and generate results.
     ```bash
-    python 3_main_execution.py
+    python main_execution.py
     ```
 4.  **Run R Reporting:** Open the project directory in RStudio or run the R script from an R terminal.
     ```R
-    source("4_reporting.R")
+    source("reporting.R")
     ```
 ## Dataset Source
 
@@ -46,9 +46,9 @@ The original design relied on the **VADER** lexicon from NLTK, a general-purpose
 ### 2. Future Work & Production Scaling
 
 * **NLP Model Improvement (Accuracy):**
-    * Replace the temporary lexicon in `2_nlp_pipeline.py` with a **fine-tuned transformer model (e.g., DistilBERT or RoBERTa)** specifically trained on the IMDB dataset for state-of-the-art accuracy.
+    * Replace the temporary lexicon in `nlp_pipeline.py` with a **fine-tuned transformer model (e.g., DistilBERT or RoBERTa)** specifically trained on the IMDB dataset for state-of-the-art accuracy.
 * **Data Source Improvement (Scalability):**
-    * Refactor `1_data_setup.py` to ingest data from a real-time, external source, such as a $\text{PostgreSQL}$ database query or a $\text{Kafka}$ topic, instead of reading a static local file.
+    * Refactor `data_setup.py` to ingest data from a real-time, external source, such as a $\text{PostgreSQL}$ database query or a $\text{Kafka}$ topic, instead of reading a static local file.
 * **Orchestration:**
     * Integrate the entire workflow into a scheduling tool like $\text{Apache Airflow}$ to manage dependencies and schedule automated daily reports.
 
