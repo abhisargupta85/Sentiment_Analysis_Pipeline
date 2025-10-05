@@ -30,6 +30,9 @@ The workflow is orchestrated by `3_main_execution.py` and follows a clear contra
     ```R
     source("4_reporting.R")
     ```
+## Dataset Source
+
+Dataset: https://www.kaggle.com/code/nourhankarm/sentiment-analysis-of-movie-reviews-imdb-dataset/input
 
 ---
 
@@ -57,3 +60,5 @@ The original design relied on the **VADER** lexicon from NLTK, a general-purpose
 | :--- | :--- |
 | **`.gitignore`** | Exclude generated files like `sentiment_results_*.csv`, `sentiment_distribution_report.png`, and environment folders (`__pycache__`, `.venv`). |
 | **`requirements.txt`**| `pandas`, `nltk`, `sqlite3` (built-in) |
+
+**NOTE:** This project uses publicly available data for educational and analytical purposes. No personal data is stored or processed beyond what is publicly accessible.
